@@ -5,6 +5,6 @@ export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', 'shadcn-nuxt'],
   shadcn: {
     prefix: '',
-    componentDir: '@/comopnents/ui',
+    componentDir: '@/components/ui',
   },
 })
