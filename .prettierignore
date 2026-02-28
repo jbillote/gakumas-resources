@@ -1,0 +1,3 @@
+src/generated/**/*
+app/components/ui/**/*
+node_modules/**/*
