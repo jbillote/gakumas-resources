@@ -13,7 +13,9 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/s
         <Separator orientation="vertical" class="mr-2 data-[orientation=vertical]:h-4" />
         <span>学園アイドルマスター</span>
       </header>
-      <div class="flex flex-1 flex-col gap-4 p-4">Test</div>
+      <div class="flex flex-1 flex-col gap-4 p-4">
+        <NuxtPage />
+      </div>
     </SidebarInset>
   </SidebarProvider>
 </template>
