@@ -23,19 +23,9 @@ const props = defineProps<SidebarProps>()
     </SidebarHeader>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Tools</SidebarGroupLabel>
+        <SidebarGroupLabel>Quick Info</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton>
-                <a href="#">Contest Planner</a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
-            <SidebarMenuItem>
-              <SidebarMenuButton>
-                <a href="/">Home</a>
-              </SidebarMenuButton>
-            </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton>
                 <a href="/hajime-legend">Hajime Legend</a>

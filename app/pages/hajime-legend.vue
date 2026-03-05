@@ -1,3 +1,93 @@
+<script setup lang="ts">
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
+</script>
+
 <template>
-<div>Hajime Legend</div>
+  <div>
+    <div class="text-bold text-center text-4xl">初レジェンド</div>
+    <div class="text-semibold text-center text-2xl">Exam Caps</div>
+    <div class="flex">
+      <div class="w-1/2 p-2">
+        <Table class="text-center">
+          <TableCaption>Midterms</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead class="text-center">Score</TableHead>
+              <TableHead class="text-center">Rating per Score</TableHead>
+              <TableHead class="text-center">Rating</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>30,000</TableCell>
+              <TableCell />
+              <TableCell>2400</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>30,000 - 40,0000</TableCell>
+              <TableCell>0.008</TableCell>
+              <TableCell>2400 - 2480</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>40,000 - 50,000</TableCell>
+              <TableCell>0.003</TableCell>
+              <TableCell>2480 - 2510</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>50,000 - 60,000</TableCell>
+              <TableCell>0.002</TableCell>
+              <TableCell>2510 - 2530</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>60,000 - 200,000</TableCell>
+              <TableCell>0.001</TableCell>
+              <TableCell>2530 - 2670</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
+      <div class="w-1/2 p-2">
+        <Table class="text-center">
+          <TableCaption>Finals</TableCaption>
+          <TableHeader>
+            <TableRow>
+              <TableHead class="text-center">Score</TableHead>
+              <TableHead class="text-center">Rating per Score</TableHead>
+              <TableHead class="text-center">Rating</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow>
+              <TableCell>400,000</TableCell>
+              <TableCell />
+              <TableCell>2400</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>400,000 - 500,000</TableCell>
+              <TableCell>0.01</TableCell>
+              <TableCell>7200 - 8200</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>500,000 - 600,000</TableCell>
+              <TableCell>0.008</TableCell>
+              <TableCell>8200 - 9000</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>600,000 - 2,000,000</TableCell>
+              <TableCell>0.001</TableCell>
+              <TableCell>9000 - 10,400</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </div>
+    </div>
+  </div>
 </template>

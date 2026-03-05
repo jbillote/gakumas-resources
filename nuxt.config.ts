@@ -4,15 +4,15 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxtjs/color-mode', '@nuxtjs/tailwindcss', 'shadcn-nuxt'],
   colorMode: {
-    classSuffix: ''
+    classSuffix: '',
   },
   shadcn: {
     prefix: '',
     componentDir: '@/components/ui',
   },
-  "tailwindcss": {
+  tailwindcss: {
     config: {
-      darkMode: 'class'
-    }
-  }
+      darkMode: 'class',
+    },
+  },
 })
