@@ -10,7 +10,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { VisAxis, VisStackedBar, VisXYContainer } from '@unovis/vue'
+import { VisAxis, VisGroupedBar, VisXYContainer } from '@unovis/vue'
 
 const xLabels = ['Vo', 'Da', 'Vi']
 const x = (d, i) => i
@@ -52,6 +52,7 @@ const finals = [
     sankaku: 1627,
   },
 ]
+
 const chartConfig = {
   nijuumaru: {
     label: '◎',
@@ -154,7 +155,7 @@ const chartConfig = {
       <div class="flex w-1/2 flex-col p-2">
         <ChartContainer :config="chartConfig">
           <VisXYContainer :data="midterms" :y-domain="[0, undefined]">
-            <VisStackedBar
+            <VisGroupedBar
               :x="x"
               :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
               :color="[
@@ -173,7 +174,7 @@ const chartConfig = {
       <div class="flex w-1/2 flex-col p-2">
         <ChartContainer :config="chartConfig">
           <VisXYContainer :data="finals" :y-domain="[0, undefined]">
-            <VisStackedBar
+            <VisGroupedBar
               :x="x"
               :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
               :color="[
