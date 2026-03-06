@@ -153,7 +153,7 @@ const chartConfig = {
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
         <ChartContainer :config="chartConfig">
-          <VisXYContainer :data="midterms">
+          <VisXYContainer :data="midterms" :y-domain="[0, undefined]">
             <VisStackedBar
               :x="x"
               :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
@@ -165,14 +165,14 @@ const chartConfig = {
               :rounded-corners="4"
             />
             <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
-            <VisAxis type="y" :tick-format="xTickFormat" />
+            <VisAxis type="y" />
           </VisXYContainer>
         </ChartContainer>
         <div class="text-center">Midterms</div>
       </div>
       <div class="flex w-1/2 flex-col p-2">
         <ChartContainer :config="chartConfig">
-          <VisXYContainer :data="finals">
+          <VisXYContainer :data="finals" :y-domain="[0, undefined]">
             <VisStackedBar
               :x="x"
               :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
@@ -184,7 +184,7 @@ const chartConfig = {
               :rounded-corners="4"
             />
             <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
-            <VisAxis type="y" :tick-format="xTickFormat" />
+            <VisAxis type="y" />
           </VisXYContainer>
         </ChartContainer>
         <div class="text-center">Finals</div>
