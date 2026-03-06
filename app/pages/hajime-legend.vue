@@ -15,7 +15,7 @@ import {
     <div class="text-bold text-center text-4xl">初レジェンド</div>
     <div class="text-semibold text-center text-2xl">Exam Caps</div>
     <div class="flex">
-      <div class="w-1/2 p-2">
+      <div class="flex w-1/2 flex-col p-2">
         <Table class="text-center">
           <TableCaption>Midterms</TableCaption>
           <TableHeader>
@@ -53,8 +53,9 @@ import {
             </TableRow>
           </TableBody>
         </Table>
+        <div class="mt-auto text-center">SSS+ Target: 40,000</div>
       </div>
-      <div class="w-1/2 p-2">
+      <div class="flex w-1/2 flex-col p-2">
         <Table class="text-center">
           <TableCaption>Finals</TableCaption>
           <TableHeader>
@@ -87,6 +88,7 @@ import {
             </TableRow>
           </TableBody>
         </Table>
+        <div class="mt-auto text-center">SSS+ Target: 600,000</div>
       </div>
     </div>
   </div>
