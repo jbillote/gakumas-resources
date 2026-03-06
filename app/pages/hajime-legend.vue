@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { ChartConfig } from '@/components/ui/chart'
+import { ChartContainer } from '@/components/ui/chart'
 import {
   Table,
   TableBody,
@@ -8,6 +10,62 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import { VisAxis, VisStackedBar, VisXYContainer } from '@unovis/vue'
+
+const xLabels = ['Vo', 'Da', 'Vi']
+const x = (d, i) => i
+const xTicks = xLabels.map((_, i) => i)
+const xTickFormat = (i) => xLabels[i]
+
+const midterms = [
+  {
+    nijuumaru: 460,
+    maru: 415,
+    sankaku: 369,
+  },
+  {
+    nijuumaru: 359,
+    maru: 324,
+    sankaku: 288,
+  },
+  {
+    nijuumaru: 618,
+    maru: 557,
+    sankaku: 495,
+  },
+]
+
+const finals = [
+  {
+    nijuumaru: 1510,
+    maru: 1361,
+    sankaku: 1211,
+  },
+  {
+    nijuumaru: 1179,
+    maru: 1063,
+    sankaku: 946,
+  },
+  {
+    nijuumaru: 2028,
+    maru: 1828,
+    sankaku: 1627,
+  },
+]
+const chartConfig = {
+  nijuumaru: {
+    label: '◎',
+    color: 'var(--chart-1)',
+  },
+  maru: {
+    label: '〇',
+    color: 'var(--chart-2)',
+  },
+  sankaku: {
+    label: '△',
+    color: 'var(--chart-3)',
+  },
+} satisfies ChartConfig
 </script>
 
 <template>
@@ -89,6 +147,47 @@ import {
           </TableBody>
         </Table>
         <div class="mt-auto text-center">SSS+ Target: 600,000</div>
+      </div>
+    </div>
+    <div class="text-semibold text-center text-2xl">Exam Stat Thresholds</div>
+    <div class="flex">
+      <div class="flex w-1/2 flex-col p-2">
+        <ChartContainer :config="chartConfig">
+          <VisXYContainer :data="midterms">
+            <VisStackedBar
+              :x="x"
+              :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
+              :color="[
+                chartConfig.nijuumaru.color,
+                chartConfig.maru.color,
+                chartConfig.sankaku.color,
+              ]"
+              :rounded-corners="4"
+            />
+            <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
+            <VisAxis type="y" :tick-format="xTickFormat" />
+          </VisXYContainer>
+        </ChartContainer>
+        <div class="text-center">Midterms</div>
+      </div>
+      <div class="flex w-1/2 flex-col p-2">
+        <ChartContainer :config="chartConfig">
+          <VisXYContainer :data="finals">
+            <VisStackedBar
+              :x="x"
+              :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
+              :color="[
+                chartConfig.nijuumaru.color,
+                chartConfig.maru.color,
+                chartConfig.sankaku.color,
+              ]"
+              :rounded-corners="4"
+            />
+            <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
+            <VisAxis type="y" :tick-format="xTickFormat" />
+          </VisXYContainer>
+        </ChartContainer>
+        <div class="text-center">Finals</div>
       </div>
     </div>
   </div>
