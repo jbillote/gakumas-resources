@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { ChartConfig } from '@/components/ui/chart'
-import { ChartContainer } from '@/components/ui/chart'
+import ExamStatChart from '@/components/ExamStatChart.vue'
 import {
   Table,
   TableBody,
@@ -153,41 +152,11 @@ const chartConfig = {
     <div class="text-semibold text-center text-2xl">Exam Stat Thresholds</div>
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
-        <ChartContainer :config="chartConfig">
-          <VisXYContainer :data="midterms" :y-domain="[0, undefined]">
-            <VisGroupedBar
-              :x="x"
-              :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
-              :color="[
-                chartConfig.nijuumaru.color,
-                chartConfig.maru.color,
-                chartConfig.sankaku.color,
-              ]"
-              :rounded-corners="4"
-            />
-            <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
-            <VisAxis type="y" />
-          </VisXYContainer>
-        </ChartContainer>
+        <ExamStatChart :stats="midterms" />
         <div class="text-center">Midterms</div>
       </div>
       <div class="flex w-1/2 flex-col p-2">
-        <ChartContainer :config="chartConfig">
-          <VisXYContainer :data="finals" :y-domain="[0, undefined]">
-            <VisGroupedBar
-              :x="x"
-              :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
-              :color="[
-                chartConfig.nijuumaru.color,
-                chartConfig.maru.color,
-                chartConfig.sankaku.color,
-              ]"
-              :rounded-corners="4"
-            />
-            <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
-            <VisAxis type="y" />
-          </VisXYContainer>
-        </ChartContainer>
+        <ExamStatChart :stats="finals" />
         <div class="text-center">Finals</div>
       </div>
     </div>
