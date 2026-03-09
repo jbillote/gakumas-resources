@@ -9,12 +9,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { VisAxis, VisGroupedBar, VisXYContainer } from '@unovis/vue'
-
-const xLabels = ['Vo', 'Da', 'Vi']
-const x = (d, i) => i
-const xTicks = xLabels.map((_, i) => i)
-const xTickFormat = (i) => xLabels[i]
 
 const midterms = [
   {
@@ -51,21 +45,6 @@ const finals = [
     sankaku: 1627,
   },
 ]
-
-const chartConfig = {
-  nijuumaru: {
-    label: '◎',
-    color: 'var(--chart-1)',
-  },
-  maru: {
-    label: '〇',
-    color: 'var(--chart-2)',
-  },
-  sankaku: {
-    label: '△',
-    color: 'var(--chart-3)',
-  },
-} satisfies ChartConfig
 </script>
 
 <template>

@@ -7,15 +7,6 @@ import {
   ChartTooltipContent,
   componentToString,
 } from '@/components/ui/chart'
-import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from '@/components/ui/table'
 import type { Stat } from '@/types/stat'
 import { VisAxis, VisGroupedBar, VisXYContainer } from '@unovis/vue'
 
@@ -39,7 +30,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-const props = defineProps<{
+defineProps<{
   stats: [Stat, Stat, Stat]
 }>()
 </script>
@@ -47,15 +38,26 @@ const props = defineProps<{
 <template>
   <ChartContainer :config="chartConfig">
     <VisXYContainer :data="stats" :y-domain="[0, undefined]">
-      <VisGroupedBar :x="x" :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
+      <VisGroupedBar
+        :x="x"
+        :y="[(d) => d.nijuumaru, (d) => d.maru, (d) => d.sankaku]"
         :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
-        :rounded-corners="4" />
+        :rounded-corners="4"
+      />
       <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
       <VisAxis type="y" />
 
       <ChartTooltip />
-      <ChartCrosshair :template="componentToString(chartConfig, ChartToltipContent)"
-        :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]" />
+      <ChartCrosshair
+        :template="
+          componentToString(chartConfig, ChartTooltipContent, {
+            labelFormatter(d) {
+              return xLabels[d]
+            },
+          })
+        "
+        :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
+      />
     </VisXYContainer>
   </ChartContainer>
 </template>
