@@ -9,42 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
-const midterms = [
-  {
-    nijuumaru: 460,
-    maru: 415,
-    sankaku: 369,
-  },
-  {
-    nijuumaru: 359,
-    maru: 324,
-    sankaku: 288,
-  },
-  {
-    nijuumaru: 618,
-    maru: 557,
-    sankaku: 495,
-  },
-]
-
-const finals = [
-  {
-    nijuumaru: 1510,
-    maru: 1361,
-    sankaku: 1211,
-  },
-  {
-    nijuumaru: 1179,
-    maru: 1063,
-    sankaku: 946,
-  },
-  {
-    nijuumaru: 2028,
-    maru: 1828,
-    sankaku: 1627,
-  },
-]
+import { examStatThresholds } from '@/data/hajime-legend'
 </script>
 
 <template>
@@ -131,11 +96,11 @@ const finals = [
     <div class="text-semibold text-center text-2xl">Exam Stat Thresholds</div>
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="midterms" />
+        <ExamStatChart :stats="examStatThresholds.jsna.midterms" />
         <div class="text-center">Midterms</div>
       </div>
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="finals" />
+        <ExamStatChart :stats="examStatThresholds.jsna.finals" />
         <div class="text-center">Finals</div>
       </div>
     </div>

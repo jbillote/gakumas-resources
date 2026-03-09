@@ -1,0 +1,1 @@
+export { examStatThresholds } from './examStatThresholds'
