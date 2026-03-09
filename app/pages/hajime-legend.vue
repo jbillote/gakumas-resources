@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CharacterDropdown from '@/components/CharacterDropdown.vue'
 import ExamStatChart from '@/components/ExamStatChart.vue'
 import {
   Table,
@@ -94,6 +95,9 @@ import { examStatThresholds } from '@/data/hajime-legend'
       </div>
     </div>
     <div class="text-semibold text-center text-2xl">Exam Stat Thresholds</div>
+    <div class="flex justify-center p-2">
+      <CharacterDropdown />
+    </div>
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
         <ExamStatChart :stats="examStatThresholds.jsna.midterms" />
