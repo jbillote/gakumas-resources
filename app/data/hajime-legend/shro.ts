@@ -1,4 +1,6 @@
-const shinosawaHiro = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const shinosawaHiro: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 618,

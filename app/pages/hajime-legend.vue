@@ -10,10 +10,10 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { examStatThresholds } from '@/data/hajime-legend'
+import { characterStats } from '@/data/hajime-legend'
 
 const selectedCharacter = ref('jsna')
-const chartData = computed(() => examStatThresholds[selectedCharacter.value])
+const chartData = computed(() => characterStats[selectedCharacter.value])
 </script>
 
 <template>

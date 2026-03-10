@@ -1,4 +1,6 @@
-const fujitaKotone = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const fujitaKotone: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 359,

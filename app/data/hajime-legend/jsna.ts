@@ -1,4 +1,6 @@
-const juouSena = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const juouSena: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 460,

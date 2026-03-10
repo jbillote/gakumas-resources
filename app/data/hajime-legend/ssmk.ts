@@ -1,4 +1,6 @@
-const shiunSumika = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const shiunSumika: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 360,

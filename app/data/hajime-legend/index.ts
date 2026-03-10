@@ -1,1 +1,1 @@
-export { examStatThresholds } from './examStatThresholds'
+export { characterStats } from './characterStats'

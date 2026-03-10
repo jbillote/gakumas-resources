@@ -1,4 +1,6 @@
-const hanamiUme = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const hanamiUme: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 460,

@@ -1,4 +1,6 @@
-const kuramotoChina = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const kuramotoChina: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 360,

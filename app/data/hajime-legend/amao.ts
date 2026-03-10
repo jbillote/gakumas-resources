@@ -1,4 +1,6 @@
-const arimuraMao = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const arimuraMao: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 648,

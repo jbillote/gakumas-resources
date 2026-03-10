@@ -1,4 +1,6 @@
-const himesakiRinami = {
+import { type ExamStatThresholds } from "./examStatThresholds"
+
+const himesakiRinami: ExamStatThresholds = {
   midterms: [
     {
       nijuumaru: 359,
