@@ -11,6 +11,9 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { examStatThresholds } from '@/data/hajime-legend'
+
+const selectedCharacter = ref('jsna')
+const chartData = computed(() => examStatThresholds[selectedCharacter.value])
 </script>
 
 <template>
@@ -96,15 +99,15 @@ import { examStatThresholds } from '@/data/hajime-legend'
     </div>
     <div class="text-semibold text-center text-2xl">Exam Stat Thresholds</div>
     <div class="flex justify-center p-2">
-      <CharacterDropdown />
+      <CharacterDropdown v-model="selectedCharacter" />
     </div>
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="examStatThresholds.jsna.midterms" />
+        <ExamStatChart :stats="chartData.midterms" />
         <div class="text-center">Midterms</div>
       </div>
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="examStatThresholds.jsna.finals" />
+        <ExamStatChart :stats="chartData.finals" />
         <div class="text-center">Finals</div>
       </div>
     </div>
