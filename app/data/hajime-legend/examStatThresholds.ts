@@ -1,4 +1,5 @@
 import { arimuraMao } from './amao'
+import { amayaTsubame } from './atbm'
 import { fujitaKotone } from './fktn'
 import { hatayaMisuzu } from './hmsz'
 import { himesakiRinami } from './hrnm'
@@ -13,6 +14,7 @@ import { tsukimuraTemari } from './ttmr'
 
 const examStatThresholds = {
   amao: arimuraMao,
+  atbm: amayaTsubame,
   fktn: fujitaKotone,
   hmsz: hatayaMisuzu,
   hrnm: himesakiRinami,
