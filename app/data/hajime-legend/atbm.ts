@@ -1,4 +1,4 @@
-import { type ExamStatThresholds } from "./examStatThresholds"
+import type { ExamStatThresholds } from './examStatThresholds'
 
 const amayaTsubame: ExamStatThresholds = {
   midterms: [

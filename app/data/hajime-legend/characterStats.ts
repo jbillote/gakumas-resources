@@ -1,5 +1,6 @@
 import { arimuraMao } from './amao'
 import { amayaTsubame } from './atbm'
+import type { ExamStatThresholds } from './examStatThresholds'
 import { fujitaKotone } from './fktn'
 import { hatayaMisuzu } from './hmsz'
 import { himesakiRinami } from './hrnm'
@@ -11,7 +12,6 @@ import { katsuragiLilja } from './kllj'
 import { shinosawaHiro } from './shro'
 import { shiunSumika } from './ssmk'
 import { tsukimuraTemari } from './ttmr'
-import type { ExamStatThresholds } from './examStatThresholds'
 
 const characterStats: Record<string, ExamStatThresholds> = {
   amao: arimuraMao,

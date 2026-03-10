@@ -12,7 +12,7 @@ import type { Stat } from '@/types/stat'
 import { VisAxis, VisGroupedBar, VisXYContainer } from '@unovis/vue'
 
 const xLabels = ['Vo', 'Da', 'Vi']
-const x = (_: any, i: number) => i
+const x = (_: Stat, i: number) => i
 const xTicks = xLabels.map((_, i) => i)
 const xTickFormat = (i: number) => xLabels[i]
 
@@ -41,29 +41,29 @@ defineProps<{
     <Spinner class="size-4" />
   </div>
   <div v-else>
-  <ChartContainer :config="chartConfig">
-    <VisXYContainer :data="stats" :y-domain="[0, undefined]">
-      <VisGroupedBar
-        :x="x"
-        :y="[(d: Stat) => d.nijuumaru, (d: Stat) => d.maru, (d: Stat) => d.sankaku]"
-        :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
-        :rounded-corners="4"
-      />
-      <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
-      <VisAxis type="y" />
+    <ChartContainer :config="chartConfig">
+      <VisXYContainer :data="stats" :y-domain="[0, undefined]">
+        <VisGroupedBar
+          :x="x"
+          :y="[(d: Stat) => d.nijuumaru, (d: Stat) => d.maru, (d: Stat) => d.sankaku]"
+          :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
+          :rounded-corners="4"
+        />
+        <VisAxis type="x" :tick-values="xTicks" :tick-format="xTickFormat" />
+        <VisAxis type="y" />
 
-      <ChartTooltip />
-      <ChartCrosshair
-        :template="
-          componentToString(chartConfig, ChartTooltipContent, {
-            labelFormatter(d) {
-              return xLabels[d as number] as string
-            },
-          })
-        "
-        :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
-      />
-    </VisXYContainer>
-  </ChartContainer>
+        <ChartTooltip />
+        <ChartCrosshair
+          :template="
+            componentToString(chartConfig, ChartTooltipContent, {
+              labelFormatter(d) {
+                return xLabels[d as number] as string
+              },
+            })
+          "
+          :color="[chartConfig.nijuumaru.color, chartConfig.maru.color, chartConfig.sankaku.color]"
+        />
+      </VisXYContainer>
+    </ChartContainer>
   </div>
 </template>
