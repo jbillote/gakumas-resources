@@ -103,11 +103,11 @@ const chartData = computed(() => characterStats[selectedCharacter.value])
     </div>
     <div class="flex">
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="chartData.midterms" />
+        <ExamStatChart :stats="chartData?.midterms" />
         <div class="text-center">Midterms</div>
       </div>
       <div class="flex w-1/2 flex-col p-2">
-        <ExamStatChart :stats="chartData.finals" />
+        <ExamStatChart :stats="chartData?.finals" />
         <div class="text-center">Finals</div>
       </div>
     </div>

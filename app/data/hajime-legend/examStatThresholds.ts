@@ -1,8 +1,8 @@
 import type { Stat } from "@/types/stat"
 
 interface ExamStatThresholds {
-    midterms: Stat[],
-    finals: Stat[]
+    midterms: [Stat, Stat, Stat],
+    finals: [Stat, Stat, Stat]
 }
 
 export { type ExamStatThresholds }
