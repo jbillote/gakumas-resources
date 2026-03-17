@@ -19,7 +19,9 @@ const vi = ref(0)
 const midtermScore = ref(0)
 const ratingScores = computed(() => {
   if (vo.value > 0 && da.value > 0 && vi.value > 0 && midtermScore.value > 0) {
-    return calculateCurrentRating(vo.value, da.value, vi.value, midtermScore.value)
+    return calculateTargetScores(
+      calculateCurrentRating(vo.value, da.value, vi.value, midtermScore.value),
+    )
   }
 
   return {}
@@ -69,13 +71,9 @@ const ratingScores = computed(() => {
             </TableRow>
           </TableHeader>
           <TableBody>
-            <TableRow>
-              <TableCell>S4</TableCell>
-              <TableCell>{{ ratingScores['S4'] }}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>SSS+</TableCell>
-              <TableCell>{{ ratingScores['SSS+'] }}</TableCell>
+            <TableRow v-for="rating in Object.keys(ratingScores)" :key="rating">
+              <TableCell>{{ rating }}</TableCell>
+              <TableCell>{{ ratingScores[rating] }}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
