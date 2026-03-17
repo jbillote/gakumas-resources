@@ -23,12 +23,15 @@ const props = defineProps<SidebarProps>()
     </SidebarHeader>
     <SidebarContent>
       <SidebarGroup>
-        <SidebarGroupLabel>Quick Info</SidebarGroupLabel>
+        <SidebarGroupLabel>Hajime Legend</SidebarGroupLabel>
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton>
-                <a href="/hajime-legend">Hajime Legend</a>
+                <a href="/hajime-legend/quick-info">Quick Info</a>
+              </SidebarMenuButton>
+              <SidebarMenuButton>
+                <a href="/hajime-legend/rating-calculator">Rating Calculator</a>
               </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>

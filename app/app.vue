@@ -14,7 +14,9 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/s
         <span>学園アイドルマスター</span>
       </header>
       <div class="flex flex-1 flex-col gap-4 p-4">
-        <NuxtPage />
+        <NuxtLayout>
+          <NuxtPage />
+        </NuxtLayout>
       </div>
     </SidebarInset>
   </SidebarProvider>
