@@ -10,14 +10,31 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import { characterStats } from '@/data/hajime-legend'
+import { Idols } from '@/data'
+import { HajimeLegendExamStatThresholds } from '@/data/hajimeLegendThresholds'
+import type { Stat } from '@/types/stat'
 
 definePageMeta({
   layout: 'hajime-legend',
 })
 
 const selectedCharacter = ref('jsna')
-const chartData = computed(() => characterStats[selectedCharacter.value])
+const chartData = computed(() => {
+  const data: Record<string, [Stat, Stat, Stat]> = {
+    midterms: new Array(3) as [Stat, Stat, Stat],
+    finals: new Array(3) as [Stat, Stat, Stat],
+  }
+  const curIdol = Idols[selectedCharacter.value] ? Idols[selectedCharacter.value] : Idols.jsna
+
+  for (let i = 0; i < curIdol!.stats.length; i++) {
+    data.midterms![curIdol!.stats[i]!] =
+      HajimeLegendExamStatThresholds[curIdol!.statDistribution]!.midterms![i]!
+    data.finals![curIdol!.stats[i]!] =
+      HajimeLegendExamStatThresholds[curIdol!.statDistribution]!.finals![i]!
+  }
+
+  return data
+})
 </script>
 
 <template>

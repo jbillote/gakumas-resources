@@ -1,11 +1,11 @@
 import { arimuraMao } from './amao'
 import { amayaTsubame } from './atbm'
-import type { ExamStatThresholds } from './examStatThresholds'
 import { fujitaKotone } from './fktn'
 import { hatayaMisuzu } from './hmsz'
 import { himesakiRinami } from './hrnm'
 import { hanamiSaki } from './hski'
 import { hanamiUme } from './hume'
+import type { Idol } from './idol'
 import { juouSena } from './jsna'
 import { kuramotoChina } from './kcna'
 import { katsuragiLilja } from './kllj'
@@ -13,7 +13,7 @@ import { shinosawaHiro } from './shro'
 import { shiunSumika } from './ssmk'
 import { tsukimuraTemari } from './ttmr'
 
-const characterStats: Record<string, ExamStatThresholds> = {
+const Idols: Record<string, Idol> = {
   amao: arimuraMao,
   atbm: amayaTsubame,
   fktn: fujitaKotone,
@@ -29,4 +29,4 @@ const characterStats: Record<string, ExamStatThresholds> = {
   ttmr: tsukimuraTemari,
 }
 
-export { characterStats }
+export { Idols }
