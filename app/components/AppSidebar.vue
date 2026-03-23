@@ -33,6 +33,9 @@ const props = defineProps<SidebarProps>()
               <SidebarMenuButton>
                 <a href="/hajime-legend/rating-calculator">Rating Calculator</a>
               </SidebarMenuButton>
+              <SidebarMenuButton>
+                <a href="/hajime-legend/asari-event">Asari Event Calculator</a>
+              </SidebarMenuButton>
             </SidebarMenuItem>
           </SidebarMenu>
         </SidebarGroupContent>
